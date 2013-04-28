@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Collective Intelligence HHlab</title>
+  <script data-main="js/demo" src="js/require-jquery.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Collective Intelligence</h1>
+    <p>JavaScript B</p>
+  </header>
+
+  <nav>
+  </nav>
+
+  <section id="sim">
+    <h1>2.3 似ているユーザーを探し出す</h1>
+    <form id="demo-form-sim">
+      <textarea name="source" id="" cols="90" rows="10">{
+  "Lisa Rose": {
+    "Lady in the Water": 2.5,
+    "Snakes on a Plane": 3.5,
+    "Just My Luck": 3.0,
+    "Superman Returns": 3.5,
+    "You, Me and Dupree": 2.5,
+    "The Night Listener": 3.0
+  },
+  "Gene Seymour": {
+    "Lady in the Water": 3.0,
+    "Snakes on a Plane": 3.5,
+    "Just My Luck": 1.5,
+    "Superman Returns": 5.0,
+    "The Night Listener": 3.0,
+    "You, Me and Dupree": 3.5
+  },
+  "Michael Phillips": {
+    "Lady in the Water": 2.5,
+    "Snakes on a Plane": 3.0,
+    "Superman Returns": 3.5,
+    "The Night Listener": 4.0
+  },
+  "Claudia Puig": {
+    "Snakes on a Plane": 3.5,
+    "Just My Luck": 3.0,
+    "Superman Returns": 4.0,
+    "You, Me and Dupree": 2.5,
+    "The Night Listener": 4.5
+  },
+  "Mick LaSalle": {
+    "Lady in the Water": 3.0,
+    "Snakes on a Plane": 4.0,
+    "Just My Luck": 2.0,
+    "Superman Returns": 3.0,
+    "The Night Listener": 3.0,
+    "You, Me and Dupree": 2.0
+  },
+  "Jack Matthews": {
+    "Lady in the Water": 3.0,
+    "Snakes on a Plane": 4.0,
+    "The Night Listener": 3.0,
+    "Superman Returns": 5.0,
+    "You, Me and Dupree": 3.5
+  },
+  "Toby": {
+    "Snakes on a Plane": 4.5,
+    "You, Me and Dupree": 1.0,
+    "Superman Returns": 4.0
+  }
+}</textarea>
+      <p>
+        <label><input type="radio" name="method" value="sim_distance">sim_distance</label>
+        <label><input type="radio" name="method" value="sim_pearson" checked="checked">sim_pearson</label>
+      </p>
+      <p><input type="submit">score:<input type="text" name="result"></p>
+    </form>
+  </section>
+
+
+</body>
+</html>
