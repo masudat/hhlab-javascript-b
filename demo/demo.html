@@ -16,10 +16,10 @@
   <nav>
   </nav>
 
-  <section id="sim">
+  <section id="chapter2">
     <h1>2.3 似ているユーザーを探し出す</h1>
-    <form id="demo-form-sim" class="demo-control">
-      <textarea name="source" id="" cols="90" rows="10">{
+    <form id="demo-form-chapter2" class="demo-control">
+      <textarea name="source">{
   "Lisa Rose": {
     "Lady in the Water": 2.5,
     "Snakes on a Plane": 3.5,
@@ -70,20 +70,28 @@
     "Superman Returns": 4.0
   }
 }</textarea>
-      <p>
+      <fieldset>
+        <legend>2.3.1 / 2.3.2</legend>
         <label>1:
           <select name="item1"></select>
         </label>
         <label>2:
-          <select name="item2"></option>
-          </select>
+          <select name="item2"></select>
         </label>
-      </p>
-      <p>
+        <label>score:<input type="text" name="result1" disabled></label>
+      </fieldset>
+      <fieldset>
+        <legend>2.3.4</legend>
+        <label><select name="item3"></select></label>
+        <label>limit:<input type="text" name="item4" size="1" value="4"></label>
+        <pre name="result2"></pre>
+      </fieldset>
+      <fieldset>
+        <legend>method</legend>
         <label><input type="radio" name="method" value="sim_distance">sim_distance</label>
         <label><input type="radio" name="method" value="sim_pearson" checked="checked">sim_pearson</label>
-      </p>
-      <p><input type="submit">score:<input type="text" name="result"></p>
+      </fieldset>
+      <input type="submit">
     </form>
   </section>
 
