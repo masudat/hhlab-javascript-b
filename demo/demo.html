@@ -18,7 +18,7 @@
 
   <section id="sim">
     <h1>2.3 似ているユーザーを探し出す</h1>
-    <form id="demo-form-sim">
+    <form id="demo-form-sim" class="demo-control">
       <textarea name="source" id="" cols="90" rows="10">{
   "Lisa Rose": {
     "Lady in the Water": 2.5,
@@ -70,6 +70,15 @@
     "Superman Returns": 4.0
   }
 }</textarea>
+      <p>
+        <label>1:
+          <select name="item1"></select>
+        </label>
+        <label>2:
+          <select name="item2"></option>
+          </select>
+        </label>
+      </p>
       <p>
         <label><input type="radio" name="method" value="sim_distance">sim_distance</label>
         <label><input type="radio" name="method" value="sim_pearson" checked="checked">sim_pearson</label>
