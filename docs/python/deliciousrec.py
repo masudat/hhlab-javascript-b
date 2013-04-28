@@ -8,10 +8,10 @@ def initializeUserDict(tag, count=30):  # 引数に tag と count をとる、co
     # popular な投稿を 0 から count 番目まで取得
     for p1 in get_popular(tag=tag)[0:count]:
         # このリンクを投稿したすべてのユーザを取得
-        for p2 in get_urlposts(p1['url']):  # 現在は href ではなく url になっている模様
+        for p2 in get_urlposts(p1['href']):
             user = p2['user']
             user_dict[user] = {}
-        return user_dict
+    return user_dict
 
 
 def fillItems(user_dict):
@@ -27,7 +27,7 @@ def fillItems(user_dict):
                 print "Failed user "+user+", retrying"
                 time.sleep(4)  # 4秒待って再試行
         for post in posts:
-            url = post['url']  # 現在は href ではなく url になっている模様
+            url = post['href']
             user_dict[user][url] = 1.0
             all_items[url] = 1
 

@@ -48,7 +48,7 @@ critics = {
         'Superman Returns': 5.0,
         'You, Me and Dupree': 3.5
     },
-    'Tody': {
+    'Toby': {
         'Snakes on a Plane': 4.5,
         'You, Me and Dupree': 1.0,
         'Superman Returns': 4.0
@@ -151,11 +151,40 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
                 simSums.setdefault(item, 0)
                 simSums[item] += sim
 
-        # 正規化したリストを作る
-        rankings = [(total / simSums[item], item)
-                    for item, total in totals.items()]
+    # 正規化したリストを作る
+    rankings = [(total / simSums[item], item)
+                for item, total in totals.items()]
 
-        # ソート済みのリストを返す
-        rankings.sort()
-        rankings.reverse()
-        return rankings
+    # ソート済みのリストを返す
+    rankings.sort()
+    rankings.reverse()
+    return rankings
+
+
+def transformPrefs(prefs):
+    result = {}
+    for person in prefs:
+        for item in prefs[person]:
+            result.setdefault(item, {})
+
+            # item と person を入れ替える
+            result[item][person] = prefs[person][item]
+    return result
+
+
+def calculateSimilarItems(prefs, n=10):
+    # アイテムをキーとして持ち、それぞれのアイテムに似ている
+    # アイテムのリストを値として持つディクショナリを作る
+    result = {}
+
+    # 嗜好の行列をアイテム中心なかたちに反転させる
+    itemPrefs = transformPrefs(prefs)
+    c = 0
+    for item in itemPrefs:
+        # 巨大なデータセット用にステータスを表示
+        if c % 100 == 0:
+            print "%d / %d" % (c, len(itemPrefs))
+        # このアイテムにもっとも似ているアイテムたちを探す
+        scores = topMatches(itemPrefs, item, n=n, similarity=sim_distance)
+        result[item] = scores
+    return result
