@@ -17,7 +17,7 @@
   </nav>
 
   <section id="chapter2">
-    <h1>2.3 似ているユーザーを探し出す</h1>
+    <h1>2章 推薦を行う</h1>
     <form id="demo-form-chapter2" class="demo-control">
       <textarea name="source">{
   "Lisa Rose": {
@@ -73,18 +73,23 @@
       <fieldset>
         <legend>2.3.1 / 2.3.2</legend>
         <label>1:
-          <select name="item1"></select>
+          <select name="c31_target_a"></select>
         </label>
         <label>2:
-          <select name="item2"></select>
+          <select name="c31_target_b"></select>
         </label>
-        <label>score:<input type="text" name="result1" disabled></label>
+        <label>score:<input type="text" name="c31_result" disabled></label>
       </fieldset>
       <fieldset>
-        <legend>2.3.4</legend>
-        <label><select name="item3"></select></label>
-        <label>limit:<input type="text" name="item4" size="1" value="4"></label>
-        <pre name="result2"></pre>
+        <legend>2.3.4 topMatches</legend>
+        <label><select name="c34_target"></select></label>
+        <label>limit:<input type="text" name="c34_limit" size="1" value="4"></label>
+        <pre name="c34_result"></pre>
+      </fieldset>
+      <fieldset>
+        <legend>2.4 getRecommendations</legend>
+        <label><select name="c40_target"></select></label>
+        <pre name="c40_result"></pre>
       </fieldset>
       <fieldset>
         <legend>method</legend>
